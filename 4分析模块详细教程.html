@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.策略模块详细教程 · GitBook</title>
+        <title>4.分析模块详细教程 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4分析模块详细教程.html" />
     
-    
-    <link rel="prev" href="2基础.html" />
+    <link rel="prev" href="3策略模块详细教程.html" />
     
 
     </head>
@@ -128,7 +126,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="3策略模块详细教程.html">
+        <li class="chapter " data-level="1.4" data-path="3策略模块详细教程.html">
             
                 <a href="3策略模块详细教程.html">
             
@@ -141,7 +139,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="4分析模块详细教程.html">
+        <li class="chapter active" data-level="1.5" data-path="4分析模块详细教程.html">
             
                 <a href="4分析模块详细教程.html">
             
@@ -184,7 +182,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3.策略模块详细教程</a>
+        <a href="." >4.分析模块详细教程</a>
     </h1>
 </div>
 
@@ -199,15 +197,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="3&#x5173;&#x4E8E;&#x7B56;&#x7565;&#x6A21;&#x5757;&#x8BE6;&#x7EC6;&#x6559;&#x7A0B;">3.&#x5173;&#x4E8E;&#x7B56;&#x7565;&#x6A21;&#x5757;&#x8BE6;&#x7EC6;&#x6559;&#x7A0B;</h2>
-<h3 id="31-backtrader&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7279;&#x70B9;">3.1 backtrader&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7279;&#x70B9;</h3>
-<p>&#x5148;&#x6765;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x4EA4;&#x6613;&#x7B56;&#x7565;&#x6A21;&#x5757;&#xFF08;Strategy&#xFF09;&#x7684;&#x6784;&#x6210;&#x3002;&#x4EA4;&#x6613;&#x7B56;&#x7565;&#x7C7B;&#x4EE3;&#x7801;&#x5305;&#x542B;&#x53C2;&#x6570;&#x6216;&#x51FD;&#x6570;&#x540D;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p>&#xFF08;1&#xFF09;params-&#x5168;&#x5C40;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x66F4;&#x6539;&#x4EA4;&#x6613;&#x7B56;&#x7565;&#x4E2D;&#x53D8;&#x91CF;/&#x53C2;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x53C2;&#x6570;&#x8C03;&#x4F18;&#x3002;</p>
-<p>&#xFF08;2&#xFF09;log&#xFF1A;&#x65E5;&#x5FD7;&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x8BB0;&#x5F55;&#x7B56;&#x7565;&#x7684;&#x6267;&#x884C;&#x65E5;&#x5FD7;&#xFF0C;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x51FA;&#x8BE5;&#x51FD;&#x6570;&#x63D0;&#x4F9B;&#x7684;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x548C;txt&#x53D8;&#x91CF;&#x3002;</p>
-<p>&#xFF08;3&#xFF09; init&#xFF1A;&#x7528;&#x4E8E;&#x521D;&#x59CB;&#x5316;&#x4EA4;&#x6613;&#x7B56;&#x7565;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
-<p>&#xFF08;4&#xFF09;notify_order&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x8DDF;&#x8E2A;&#x4EA4;&#x6613;&#x6307;&#x4EE4;&#xFF08;order&#xFF09;&#x7684;&#x72B6;&#x6001;&#x3002;order&#x5177;&#x6709;&#x63D0;&#x4EA4;&#xFF0C;&#x63A5;&#x53D7;&#xFF0C;&#x4E70;&#x5165;/&#x5356;&#x51FA;&#x6267;&#x884C;&#x548C;&#x4EF7;&#x683C;&#xFF0C;&#x5DF2;&#x53D6;&#x6D88;/&#x62D2;&#x7EDD;&#x7B49;&#x72B6;&#x6001;&#x3002;</p>
-<p>&#xFF08;5&#xFF09;notify_trade&#xFF0C;&#x53EF;&#x9009;&#xFF1A;&#x8DDF;&#x8E2A;&#x4EA4;&#x6613;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4EFB;&#x4F55;&#x5DF2;&#x5E73;&#x4ED3;&#x7684;&#x4EA4;&#x6613;&#x90FD;&#x5C06;&#x62A5;&#x544A;&#x6BDB;&#x5229;&#x548C;&#x51C0;&#x5229;&#x6DA6;&#x3002;</p>
-<p>&#xFF08;6&#xFF09;next&#xFF0C;&#x5FC5;&#x9009;&#xFF1A;&#x5236;&#x5B9A;&#x4EA4;&#x6613;&#x7B56;&#x7565;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7B56;&#x7565;&#x6A21;&#x5757;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+                                <h2 id="4&#x5173;&#x4E8E;&#x5206;&#x6790;&#x6A21;&#x5757;&#x8BE6;&#x7EC6;&#x6559;&#x7A0B;">4.&#x5173;&#x4E8E;&#x5206;&#x6790;&#x6A21;&#x5757;&#x8BE6;&#x7EC6;&#x6559;&#x7A0B;</h2>
+<p><img src="F:\MaYunPro\learnPro\gitbook\blackTrader\644.webp" alt=""></p>
+<p>&#x793A;&#x4F8B;</p>
+<p>&#x8FD9;&#x91CC;&#x91CD;&#x70B9;&#x662F;Analyzers&#x6A21;&#x5757;&#x7684;&#x8C03;&#x7528;&#x4E0E;&#x7ED3;&#x679C;&#x8F93;&#x51FA;&#xFF0C;&#x8C03;&#x7528;&#x6A21;&#x5757;&#x662F;cerebro.addanalyzer()&#xFF0C;&#x518D;&#x4ECE;&#x6A21;&#x5757;&#x4E2D;&#x83B7;&#x53D6;&#x5206;&#x6790;&#x6307;&#x6807;&#xFF0C;&#x5982;&#x590F;&#x666E;&#x6BD4;&#x7387;&#x662F;bt.analyzers.SharpeRatio&#xFF0C;&#x7136;&#x540E;&#x662F;&#x7ED9;&#x8BE5;&#x6307;&#x6807;&#x91CD;&#x547D;&#x540D;&#x65B9;&#x4FBF;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#xFF0C;&#x5373; _name=&apos;SharpeRatio&apos;&#x3002;&#x8981;&#x83B7;&#x53D6;&#x5206;&#x6790;&#x6307;&#x6807;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6267;&#x884C;&#x56DE;&#x6D4B;&#x7CFB;&#x7EDF;&#xFF0C;cerebro.run()&#xFF0C;&#x5E76;&#x5C06;&#x56DE;&#x6D4B;&#x7ED3;&#x679C;&#x8D4B;&#x503C;&#x7ED9;&#x53D8;&#x91CF;results&#xFF0C;&#x5206;&#x6790;&#x6307;&#x6807;&#x5B58;&#x50A8;&#x5728;results[0]&#x91CC; (strat&#x53D8;&#x91CF;&#x4EE3;&#x66FF;)&#xFF0C;&#x901A;&#x8FC7;strat.analyzers.SharpeRatio.get_analysis()&#x5373;&#x53EF;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4ED6;&#x6307;&#x6807;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#x3002;</p>
+<pre><code class="lang-python">print(<span class="hljs-string">&apos;&#x521D;&#x59CB;&#x8D44;&#x91D1;: %.2f&apos;</span> % cerebro.broker.getvalue())
+cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name = <span class="hljs-string">&apos;SharpeRatio&apos;</span>)
+cerebro.addanalyzer(bt.analyzers.DrawDown, _name=<span class="hljs-string">&apos;DW&apos;</span>)
+results = cerebro.run()
+strat = results[<span class="hljs-number">0</span>]
+print(<span class="hljs-string">&apos;&#x6700;&#x7EC8;&#x8D44;&#x91D1;: %.2f&apos;</span> % cerebro.broker.getvalue())
+print(<span class="hljs-string">&apos;&#x590F;&#x666E;&#x6BD4;&#x7387;:&apos;</span>, strat.analyzers.SharpeRatio.get_analysis())
+print(<span class="hljs-string">&apos;&#x56DE;&#x64A4;&#x6307;&#x6807;:&apos;</span>, strat.analyzers.DW.get_analysis())
+</code></pre>
 
                                 
                                 </section>
@@ -235,14 +237,10 @@
 
             
                 
-                <a href="2基础.html" class="navigation navigation-prev " aria-label="Previous page: 2.基础">
+                <a href="3策略模块详细教程.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.策略模块详细教程">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="4分析模块详细教程.html" class="navigation navigation-next " aria-label="Next page: 4.分析模块详细教程">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -251,7 +249,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.策略模块详细教程","level":"1.4","depth":1,"next":{"title":"4.分析模块详细教程","level":"1.5","depth":1,"path":"4分析模块详细教程.md","ref":"4分析模块详细教程.md","articles":[]},"previous":{"title":"2.基础","level":"1.3","depth":1,"path":"2基础.md","ref":"2基础.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3策略模块详细教程.md","mtime":"2021-06-05T09:45:22.130Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-11T09:17:54.049Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.分析模块详细教程","level":"1.5","depth":1,"previous":{"title":"3.策略模块详细教程","level":"1.4","depth":1,"path":"3策略模块详细教程.md","ref":"3策略模块详细教程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"4分析模块详细教程.md","mtime":"2021-06-11T02:20:48.054Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-11T09:17:54.049Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
